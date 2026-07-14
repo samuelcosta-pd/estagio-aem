@@ -40,6 +40,9 @@ public class HelloWorldModel {
     @Default(values="No resourceType")
     protected String resourceType;
 
+    @ValueMapValue(injectionStrategy=InjectionStrategy.OPTIONAL)
+    private String subtitle;
+
     @SlingObject
     private Resource currentResource;
     @SlingObject
@@ -50,17 +53,24 @@ public class HelloWorldModel {
     @PostConstruct
     protected void init() {
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+
         String currentPagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
-                .map(Page::getPath).orElse("");
+                .map(Page::getPath)
+                .orElse("");
 
-        message = "Hello World!\n"
+        message =
+            "Bem-vindo ao componente Hello World!\n\n"
             + "Resource type is: " + resourceType + "\n"
-            + "Current page is:  " + currentPagePath + "\n";
+            + "Current page is: " + currentPagePath;
     }
 
     public String getMessage() {
         return message;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
     }
 
 }
