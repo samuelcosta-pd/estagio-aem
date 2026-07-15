@@ -1,0 +1,13 @@
+<div
+    class="cmp-profile"
+    data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ProfileModel">
+
+    <h2>${model.name}</h2>
+
+    <p data-sly-test="${model.role}">
+        <strong>Role:</strong> ${model.role}
+    </p>
+
+    <p>${model.bio}</p>
+
+</div>
