@@ -1,24 +1,54 @@
-<div
-    class="cmp-profile"
-    data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ProfileModel">
 
-    <img
-        data-sly-test="${model.photo}"
-        src="${model.photo}"
-        alt="${model.name}">
+<div class="cmp-profile"
+     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ProfileModel">
 
-    <h2 class="cmp-profile__name">
-        ${model.name}
-    </h2>
+    <div class="cmp-profile__placeholder"
+         data-sly-test="${!model.name}">
 
-    <p
-        class="cmp-profile__role"
-        data-sly-test="${model.role}">
-        ${model.role}
-    </p>
+        <div class="cmp-profile__placeholder-icon">👤</div>
 
-    <p class="cmp-profile__bio">
-        ${model.bio}
-    </p>
+        <p class="cmp-profile__placeholder-title">
+            Este perfil ainda não foi configurado.
+        </p>
+
+        <p class="cmp-profile__placeholder-description">
+            Clique no ícone de edição para preencher as informações.
+        </p>
+
+    </div>
+
+    <article class="cmp-profile__card"
+             data-sly-test="${model.name}">
+
+        <div class="cmp-profile__avatar">
+            <img
+                data-sly-test="${model.photo}"
+                class="cmp-profile__image"
+                src="${model.photo}"
+                alt="${model.name}" />
+
+            <span class="cmp-profile__image-placeholder"
+                  data-sly-test="${!model.photo}">
+                👤
+            </span>
+        </div>
+
+        <div class="cmp-profile__info">
+            <h2 class="cmp-profile__name">
+                ${model.name}
+            </h2>
+
+            <p class="cmp-profile__role"
+               data-sly-test="${model.role}">
+                ${model.role}
+            </p>
+
+            <p class="cmp-profile__bio"
+               data-sly-test="${model.bio}">
+                ${model.bio}
+            </p>
+        </div>
+
+    </article>
 
 </div>
