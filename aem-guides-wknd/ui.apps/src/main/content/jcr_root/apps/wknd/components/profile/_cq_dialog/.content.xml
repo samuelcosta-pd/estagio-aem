@@ -19,6 +19,12 @@
                 sling:resourceType="granite/ui/components/coral/foundation/container">
 
                 <items jcr:primaryType="nt:unstructured">
+                    <photo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Foto"
+                        name="./photo"
+                        rootPath="/content/dam"/>
 
                     <name
                         jcr:primaryType="nt:unstructured"

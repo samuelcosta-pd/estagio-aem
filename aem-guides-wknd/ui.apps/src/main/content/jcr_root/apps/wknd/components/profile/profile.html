@@ -2,6 +2,11 @@
     class="cmp-profile"
     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ProfileModel">
 
+    <img
+        data-sly-test="${model.photo}"
+        src="${model.photo}"
+        alt="${model.name}">
+
     <h2 class="cmp-profile__name">
         ${model.name}
     </h2>
