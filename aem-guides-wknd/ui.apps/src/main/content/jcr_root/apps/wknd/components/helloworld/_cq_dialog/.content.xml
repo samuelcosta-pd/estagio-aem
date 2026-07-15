@@ -14,12 +14,17 @@
                     <text
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Text"
+                        fieldLabel="Texto"
+                        fieldDescription="Texto principal exibido no componente."
+                        emptyText="Digite o texto principal..."
                         name="./text"/>
+
                     <subtitle
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Subtitle"
+                        fieldLabel="Subtítulo"
+                        fieldDescription="Texto complementar (opcional)."
+                        emptyText="Digite um subtítulo..."
                         name="./subtitle"/>
                 </items>
             </column>

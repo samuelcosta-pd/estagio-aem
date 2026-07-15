@@ -48,27 +48,6 @@ public class HelloWorldModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    private String message;
-
-    @PostConstruct
-    protected void init() {
-        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-
-        String currentPagePath = Optional.ofNullable(pageManager)
-                .map(pm -> pm.getContainingPage(currentResource))
-                .map(Page::getPath)
-                .orElse("");
-
-        message =
-            "Bem-vindo ao componente Hello World!\n\n"
-            + "Resource type is: " + resourceType + "\n"
-            + "Current page is: " + currentPagePath;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
     public String getSubtitle() {
         return subtitle;
     }
