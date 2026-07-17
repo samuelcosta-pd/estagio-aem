@@ -41,7 +41,7 @@ Este desafio teve como objetivo evoluir o componente **HelloWorld** do projeto W
 
 # Deploy funcionando
 
-![alt text](assets/deploy-mvn.png)
+![alt text](assets/deploy-mvn..pngpng)
 
 # Estrutura do componente
 
