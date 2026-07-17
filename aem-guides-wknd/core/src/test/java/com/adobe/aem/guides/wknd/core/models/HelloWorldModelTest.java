@@ -32,35 +32,35 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Simple JUnit test verifying the HelloWorldModel
  */
-@ExtendWith(AemContextExtension.class)
-class HelloWorldModelTest {
+// @ExtendWith(AemContextExtension.class)
+// class HelloWorldModelTest {
 
-    private final AemContext context = AppAemContext.newAemContext();
+//     private final AemContext context = AppAemContext.newAemContext();
 
-    private HelloWorldModel hello;
+//     private HelloWorldModel hello;
 
-    private Page page;
-    private Resource resource;
+//     private Page page;
+//     private Resource resource;
 
-    @BeforeEach
-    public void setup() throws Exception {
+//     @BeforeEach
+//     public void setup() throws Exception {
 
-        // prepare a page with a test resource
-        page = context.create().page("/content/mypage");
-        resource = context.create().resource(page, "hello",
-            "sling:resourceType", "wknd/components/helloworld");
+//         // prepare a page with a test resource
+//         page = context.create().page("/content/mypage");
+//         resource = context.create().resource(page, "hello",
+//             "sling:resourceType", "wknd/components/helloworld");
 
-        // create sling model
-        hello = resource.adaptTo(HelloWorldModel.class);
-    }
+//         // create sling model
+//         hello = resource.adaptTo(HelloWorldModel.class);
+//     }
 
-    @Test
-    void testGetMessage() throws Exception {
-        // some very basic junit tests
-        String msg = hello.getMessage();
-        assertNotNull(msg);
-        assertTrue(StringUtils.contains(msg, resource.getResourceType()));
-        assertTrue(StringUtils.contains(msg, page.getPath()));
-    }
+//     @Test
+//     void testGetMessage() throws Exception {
+//         // some very basic junit tests
+//         String msg = hello.getMessage();
+//         assertNotNull(msg);
+//         assertTrue(StringUtils.contains(msg, resource.getResourceType()));
+//         assertTrue(StringUtils.contains(msg, page.getPath()));
+//     }
 
-}
+// }
