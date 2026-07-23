@@ -1,5 +1,32 @@
-.cmp-list {}
-.cmp-list__item {}
-.cmp-list__item-link {}
-.cmp-list__item-title {}
-.cmp-list__item-date {}
+.cmp-list {
+    margin: 0 0 2em 0;
+    padding: 0;
+    list-style: none;
+}
+.cmp-list__item {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eaeaea;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+}
+.cmp-list__item-link {
+    text-decoration: none;
+    color: $color-foreground;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    
+    &:hover, &:focus {
+        color: $color-primary;
+    }
+}
+.cmp-list__item-title {
+    display: inline;
+}
+.cmp-list__item-date {
+    display: block;
+    font-size: 0.75rem;
+    color: $color-gray-dark;
+    margin-top: 0.25em;
+}

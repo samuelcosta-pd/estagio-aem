@@ -1,6 +1,12 @@
-
 //== Container main content style, used on page template
 
 main.container {
-    padding: .5em 1em;
+    padding: 2em 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    
+    @media (max-width: 768px) {
+        padding: 1em;
+    }
 }
