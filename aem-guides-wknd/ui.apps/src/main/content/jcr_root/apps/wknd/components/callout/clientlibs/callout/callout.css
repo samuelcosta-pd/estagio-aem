@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Base Component Styles (Default: Claro)
+   ========================================================================== */
+.cmp-callout {
+    background-color: #ffffff;
+    border: 1px solid #eaeaec;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cmp-callout:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.cmp-callout__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.cmp-callout__text {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.cmp-callout__actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cmp-callout__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 14px 28px;
+    background-color: #00609C;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cmp-callout__button:hover {
+    background-color: #004b7a;
+    color: #ffffff;
+}
+
+.cmp-callout__button:active {
+    transform: scale(0.98);
+}
+
+.cmp-callout__placeholder {
+    padding: 24px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 2px dashed #cccccc;
+    color: #888888;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+    .cmp-callout {
+        padding: 24px;
+        margin: 0 16px;
+    }
+    
+    .cmp-callout__title {
+        font-size: 20px;
+    }
+    
+    .cmp-callout__text {
+        font-size: 15px;
+    }
+    
+    .cmp-callout__button {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* ==========================================================================
+   Style System: Claro (callout--light)
+   ========================================================================== */
+.cmp-callout.callout--light,
+.callout--light .cmp-callout {
+    background-color: #ffffff;
+    border-color: #eaeaec;
+}
+
+.cmp-callout.callout--light .cmp-callout__title,
+.callout--light .cmp-callout__title {
+    color: #222222;
+}
+
+.cmp-callout.callout--light .cmp-callout__text,
+.callout--light .cmp-callout__text {
+    color: #555555;
+}
+
+.cmp-callout.callout--light .cmp-callout__button,
+.callout--light .cmp-callout__button {
+    background-color: #00609C;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Style System: Escuro (callout--dark)
+   ========================================================================== */
+.cmp-callout.callout--dark,
+.callout--dark .cmp-callout {
+    background-color: #0F1C2D;
+    border-color: #1a2c42;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cmp-callout.callout--dark .cmp-callout__title,
+.callout--dark .cmp-callout__title {
+    color: #ffffff;
+}
+
+.cmp-callout.callout--dark .cmp-callout__text,
+.callout--dark .cmp-callout__text {
+    color: #d1d5db;
+}
+
+.cmp-callout.callout--dark .cmp-callout__button,
+.callout--dark .cmp-callout__button {
+    background-color: #ffffff;
+    color: #0F1C2D;
+}
+
+.cmp-callout.callout--dark .cmp-callout__button:hover,
+.callout--dark .cmp-callout__button:hover {
+    background-color: #f3f4f6;
+    color: #0F1C2D;
+}
