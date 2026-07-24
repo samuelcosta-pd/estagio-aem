@@ -1,0 +1,30 @@
+<sly
+    data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+    data-sly-call="${clientlib.all @ categories='wknd.destaque'}"/>
+<section class="cmp-destaque" data-sly-use.model="com.adobe.aem.guides.wknd.core.models.CalloutModel">
+    <div class="cmp-destaque__container" data-sly-test="${model.hasContent}">
+        
+        <div class="cmp-destaque__image-container" data-sly-test="${model.fileReference}">
+            <img class="cmp-destaque__image" src="${model.fileReference}" alt="${model.title}" />
+        </div>
+        
+        <div class="cmp-destaque__content">
+            <h2 class="cmp-destaque__title" data-sly-test="${model.title}">${model.title}</h2>
+            
+            <p class="cmp-destaque__text" data-sly-test="${model.text}">${model.text}</p>
+            
+            <div class="cmp-destaque__actions" data-sly-test="${model.mostrarBotao}">
+                <a class="cmp-destaque__button" 
+                   href="${model.buttonUrl}"
+                   aria-label="${model.buttonLabel}">
+                    ${model.buttonLabel}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cmp-destaque__placeholder" data-sly-test="${model.empty}">
+        Nenhum conteúdo foi configurado ainda no Callout (Destaque).<br>
+        Clique no ícone de edição para adicionar uma imagem, título, texto e botão.
+    </div>
+</section>

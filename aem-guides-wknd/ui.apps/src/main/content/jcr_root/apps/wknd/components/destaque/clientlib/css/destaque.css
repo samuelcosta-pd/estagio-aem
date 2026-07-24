@@ -1,0 +1,179 @@
+/* cmp-destaque styles */
+.cmp-destaque {
+    margin: 2em 0;
+}
+
+.cmp-destaque__container {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #333;
+    border-radius: 16px;
+    overflow: hidden; /* For rounded corners */
+    background: #fff;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cmp-destaque__image-container {
+    flex: 1;
+    border-right: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4; /* Placeholder background */
+}
+
+.cmp-destaque__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cmp-destaque__content {
+    flex: 1;
+    padding: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cmp-destaque__title {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.75em;
+    font-weight: bold;
+    color: inherit;
+}
+
+.cmp-destaque__text {
+    margin-bottom: 2em;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: inherit;
+}
+
+.cmp-destaque__actions {
+    display: flex;
+}
+
+.cmp-destaque__button {
+    display: inline-block;
+    padding: 0.75em 2em;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.cmp-destaque__button:hover {
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style System Options */
+/* 1. Escuro (Dark Mode) */
+.cmp-destaque-escuro .cmp-destaque__container {
+    background: #222;
+    color: #fff;
+    border-color: #444;
+}
+.cmp-destaque-escuro .cmp-destaque__image-container {
+    border-color: #444;
+    background: #111;
+}
+.cmp-destaque-escuro .cmp-destaque__button {
+    border-color: #fff;
+    color: #fff;
+}
+.cmp-destaque-escuro .cmp-destaque__button:hover {
+    background: #fff;
+    color: #222;
+}
+
+/* 2. Claro (Light Mode - Default, just for structure if needed) */
+.cmp-destaque-claro .cmp-destaque__container {
+    background: #fdfdfd;
+}
+
+/* 3. Image on Right */
+.style-image-right .cmp-destaque__container {
+    flex-direction: row-reverse;
+}
+.style-image-right .cmp-destaque__image-container {
+    border-right: none;
+    border-left: 2px solid #333;
+}
+.cmp-destaque-escuro.style-image-right .cmp-destaque__image-container,
+.cmp-destaque-escuro .style-image-right .cmp-destaque__image-container {
+    border-left-color: #444;
+}
+
+/* 3. WKND Vibrant */
+.style-vibrant .cmp-destaque__container {
+    background: #ffeb3b; /* WKND Yellow */
+    color: #202020;
+    border-color: #202020;
+}
+.style-vibrant .cmp-destaque__image-container {
+    border-color: #202020;
+}
+.style-vibrant .cmp-destaque__button {
+    border-color: #202020;
+    color: #202020;
+    background: transparent;
+}
+.style-vibrant .cmp-destaque__button:hover {
+    background: #202020;
+    color: #ffeb3b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cmp-destaque__container,
+    .style-image-right .cmp-destaque__container {
+        flex-direction: column;
+    }
+    
+    .cmp-destaque__image-container {
+        border-right: none;
+        border-bottom: 2px solid #333;
+        min-height: 200px;
+    }
+    
+    .style-image-right .cmp-destaque__image-container {
+        border-left: none;
+        border-bottom: 2px solid #333;
+    }
+    
+    .cmp-destaque-escuro .cmp-destaque__image-container,
+    .cmp-destaque-escuro.style-image-right .cmp-destaque__image-container,
+    .cmp-destaque-escuro .style-image-right .cmp-destaque__image-container {
+        border-bottom-color: #444;
+    }
+
+    .style-vibrant .cmp-destaque__image-container,
+    .style-vibrant.style-image-right .cmp-destaque__image-container,
+    .style-vibrant .style-image-right .cmp-destaque__image-container {
+        border-bottom-color: #202020;
+    }
+    
+    .cmp-destaque__content {
+        padding: 1.5em;
+    }
+}
+
+.cmp-destaque__placeholder {
+    padding: 2em;
+    border: 2px dashed #ccc;
+    text-align: center;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 16px;
+}

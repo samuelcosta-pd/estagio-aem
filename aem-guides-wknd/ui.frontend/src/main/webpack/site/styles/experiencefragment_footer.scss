@@ -1,16 +1,72 @@
-
 //== XF Footer style, used on page template
 
 footer.experiencefragment {
-    padding: .5em 1em;
-    border-top: 1px solid $color-foreground;
+    padding: 3em 2em;
+    background-color: #202020;
+    color: #ffffff;
+    margin-top: 4em;
 
-    @media (prefers-color-scheme: dark) {
-        border-color: $color-foreground-dark;
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover, &:focus {
+            color: $color-primary;
+        }
     }
 
+    .cmp-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+    
+    // In AEM, components are children of cmp-container. 
+    // Logo usually left, nav middle/right.
+    
+    .cmp-navigation {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .cmp-navigation__group {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2em;
+        flex-wrap: wrap;
+    }
+    
+    .cmp-navigation__item-link {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 0.875rem;
+    }
+
+    .cmp-separator {
+        width: 100%;
+        margin-top: 2em;
+    }
+    
     .cmp-separator__horizontal-rule {
         margin: 0;
         border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+    }
+    
+    .cmp-text {
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+        font-size: 0.875rem;
+        color: #cccccc;
     }
 }

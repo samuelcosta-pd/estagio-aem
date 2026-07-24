@@ -3,11 +3,14 @@
 html,
 body {
     margin: 0;
+    padding: 0;
     font-size:   $font-size;
-    font-family: $font-family;
+    font-family: $font-family-sans;
     line-height: $font-height;
     color:       $color-foreground;
     background:  $color-background;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     @media (prefers-color-scheme: dark) {
         color:       $color-foreground-dark;
@@ -15,12 +18,28 @@ body {
     }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-serif;
+    font-weight: 600;
+    margin-top: 0;
+    color: $color-foreground;
+
+    @media (prefers-color-scheme: dark) {
+        color: $color-foreground-dark;
+    }
+}
 
 a {
     color: $color-link;
+    text-decoration: none;
+    transition: color 0.2s ease;
 
     @media (prefers-color-scheme: dark) {
         color: $color-link-dark;
+    }
+
+    &:hover, &:focus {
+        color: $color-primary;
     }
 }
 
