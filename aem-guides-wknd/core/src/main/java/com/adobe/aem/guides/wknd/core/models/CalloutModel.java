@@ -13,6 +13,9 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class CalloutModel {
 
     @ValueMapValue
+    private String fileReference;
+
+    @ValueMapValue
     private String title;
 
     @ValueMapValue
@@ -23,6 +26,10 @@ public class CalloutModel {
 
     @ValueMapValue
     private String buttonUrl;
+
+    public String getFileReference() {
+        return fileReference;
+    }
 
     public String getTitle() {
         return title;
@@ -45,7 +52,8 @@ public class CalloutModel {
     }
 
     public boolean hasContent() {
-        return StringUtils.isNotBlank(title)
+        return StringUtils.isNotBlank(fileReference)
+            || StringUtils.isNotBlank(title)
             || StringUtils.isNotBlank(text)
             || isMostrarBotao();
     }

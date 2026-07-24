@@ -11,6 +11,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
+                    <fileReference
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Imagem"
+                        emptyText="Selecione uma imagem"
+                        name="./fileReference"
+                        rootPath="/content/dam"/>
                     <title
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
