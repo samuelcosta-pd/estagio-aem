@@ -39,6 +39,12 @@ header.experiencefragment {
         max-width: 1200px;
         margin: 0 auto;
         gap: 1.5em;
+
+        // Ensure component wrappers maintain vertical alignment
+        > * {
+            display: flex;
+            align-items: center;
+        }
     }
 
     //== Navigation
@@ -46,6 +52,7 @@ header.experiencefragment {
         flex: 1;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .cmp-navigation__group {
@@ -55,22 +62,27 @@ header.experiencefragment {
         display: flex;
         gap: 2em;
         flex-wrap: wrap;
+        align-items: center;
     }
     
     .cmp-navigation__item--level-0 {
-        display: block;
+        display: flex;
+        align-items: center;
 
         & > .cmp-navigation__group {
             display: none; // Hide submenus
         }
     }
     .cmp-navigation__item-link {
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0.5em 0;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 0.875rem;
         letter-spacing: 0.5px;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
     }
     .cmp-navigation__item--active > .cmp-navigation__item-link {
         color: $color-primary;
@@ -80,6 +92,8 @@ header.experiencefragment {
     //== Search and Language
     .cmp-search, .cmp-languagenavigation {
         margin-left: auto;
+        display: flex;
+        align-items: center;
     }
 
     // (Kept standard search and language styles simplified)
@@ -87,11 +101,22 @@ header.experiencefragment {
         display: flex;
         align-items: center;
         background: $color-gray-light;
-        border-radius: 20px;
-        padding: 4px 12px;
+        border-radius: 24px; // Slightly rounder for a modern look
+        padding: 6px 16px; // Increased padding for left/right and top/bottom
+        gap: 8px; // Added gap to separate icon from input text
         
         @media (prefers-color-scheme: dark) {
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        // Override AEM's default absolute positioning for the icon
+        .cmp-search__icon {
+            position: static; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
         }
     }
     .cmp-search__input {
@@ -101,5 +126,7 @@ header.experiencefragment {
         outline: none;
         width: 100%;
         color: inherit;
+        padding: 0; // Reset padding to ensure flex alignment is perfect
+        margin: 0;
     }
 }
