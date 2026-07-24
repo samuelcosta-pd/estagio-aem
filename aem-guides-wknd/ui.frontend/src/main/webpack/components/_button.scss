@@ -1,4 +1,33 @@
-.cmp-button {}
-.cmp-button__text {}
-.cmp-button__icon {}
-//.cmp-button__icon--myIcon {}
+.cmp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: $color-primary;
+    color: $color-foreground;
+    text-decoration: none;
+    border: none;
+    border-radius: 0; // Square buttons
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+        background-color: darken($color-primary, 5%);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.cmp-button__text {
+    line-height: 1;
+}
+
+.cmp-button__icon {
+    margin-right: 8px;
+}
